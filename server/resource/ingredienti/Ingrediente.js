@@ -5,9 +5,8 @@ var ingredienteSchema = new mongoose.Schema ({
         required: true
     },
     allergene: {
-        type: String,
-        required: true,
-        enum: ['si', 'no']
+        type: Boolean,
+        required: true
     },
     immagine: {
         type: String,
