@@ -2,9 +2,9 @@ var mongoose = require('mongoose');
 
 var ricetteSchema = new mongoose.Schema({
 
-    titolo: {
+    nome: {
         type: String,
-        required: [true, 'Devi inserire il titolo'],
+        required: [true, 'Devi inserire il nome'],
         unique: true,
         trim: true,
         index: true
