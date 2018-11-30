@@ -7,7 +7,7 @@ var controller = require('./controller')
 router.get('/',controller.getAll)
 
 //recupero una ricetta
-//router.get('/:id([a-z0-9]{24})',controller.getOne)
+router.get('/:id([a-z0-9]{24})',controller.getOne)
 
 //creazione ricetta
 //router.post('/',controller.postOne)
