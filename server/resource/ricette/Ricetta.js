@@ -10,7 +10,9 @@ var ricetteSchema = new mongoose.Schema({
         index: true
     },
     descrizione: {
-        type: String
+        type: String,
+        maxlength: 1000,
+        required: true
     },
     difficolta: {
         type: String,
