@@ -31,7 +31,7 @@ module.exports = (function () {
                 select: ['nome']
             })
             .populate({
-                path: 'autori',
+                path: 'autore',
                 select: ['nome']
             })
             .exec()
@@ -47,6 +47,14 @@ module.exports = (function () {
     var getOne = function (req, res) {
 
         Ricetta.findById(req.params.id)
+            .populate({
+                path: 'ingredienti',
+                select: ['nome']
+            })
+            .populate({
+                path: 'autore',
+                select: ['nome']
+            })
             .exec()
             .then(function (ricetta) {
                 res.json(ricetta)
