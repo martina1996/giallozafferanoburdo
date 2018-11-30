@@ -1,11 +1,11 @@
 module.exports = (function () {
 
-    var Ricette = require('./Ricetta')
+    var Ricetta = require('./Ricetta')
     var Ingredienti = require('../ingredienti/Ingrediente')
 
     var getAll = function (req, res) {
 
-        var query = Ricette.find();
+        var query = Ricetta.find();
         if (req.query.difficolta) {
             query.where('difficolta').equals(req.query.difficolta).sort({ field: 1 })
         }
@@ -53,16 +53,18 @@ module.exports = (function () {
     }
 
     
-    // var postOne = function (req, res) {
-    //     var nuovo = new Movie(req.body)
-    //     nuovo.save()
-    //         .then(function (data) {
-    //             res.json(data)
-    //         })
-    //         .catch(function (err) {
-    //             res.json(err);
-    //         });
-    // }
+    var postOne = function (req, res) {
+        var nuovo = new Ricetta(req.body)
+        nuovo.save()
+            .then(function (data) {
+                res.json(data)
+            })
+            .catch(function (err) {
+                res.json(err);
+            });
+    }
+
+    
     // var deleteOne = function (req, res) {
     //     Movie.findByIdAndRemove(req.params.id)
     //         .exec()
@@ -115,7 +117,7 @@ module.exports = (function () {
     return {
         getAll: getAll,
         getOne: getOne,
-        // postOne: postOne,
+        postOne: postOne,
         // putOne: putOne,
         // deleteOne: deleteOne,
         // voteOne: voteOne,
