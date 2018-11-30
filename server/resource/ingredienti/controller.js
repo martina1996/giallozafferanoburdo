@@ -25,10 +25,21 @@ module.exports = (function() {
                 res.json(err);
             });
     }
+    var deleteOne = function (req, res) {
+        Ingrediente.findByIdAndRemove(req.params.id)
+            .exec()
+            .then(function () {
+                res.json("hai cancellato l'ingrediente richiesta")
+            })
+            .catch(function (err) {
+                res.json(err);
+            });
+    }
     
     return {
         getAll: getAll,
-        postOne: postOne
+        postOne: postOne,
+        deleteOne: deleteOne
     }
 
 })()
