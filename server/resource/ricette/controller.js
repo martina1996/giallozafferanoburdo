@@ -39,18 +39,20 @@ module.exports = (function () {
                 res.json(err);
             });
     }
-    // var getOne = function (req, res) {
 
-    //     Movie.findById(req.params.id)
-    //         .exec()
-    //         .then(function (movie) {
-    //             res.json(movie)
-    //         })
-    //         .catch(function (err) {
-    //             res.json(err);
-    //         });
+    var getOne = function (req, res) {
 
-    // }
+        Ricetta.findById(req.params.id)
+            .exec()
+            .then(function (ricetta) {
+                res.json(ricetta)
+            })
+            .catch(function (err) {
+                res.json(err);
+            });
+    }
+
+    
     // var postOne = function (req, res) {
     //     var nuovo = new Movie(req.body)
     //     nuovo.save()
