@@ -64,37 +64,36 @@ module.exports = (function () {
             });
     }
 
-    
-    // var deleteOne = function (req, res) {
-    //     Movie.findByIdAndRemove(req.params.id)
-    //         .exec()
-    //         .then(function () {
-    //             res.json("hai cancellato il film richiesto")
-    //         })
-    //         .catch(function (err) {
-    //             res.json(err);
-    //         });
 
-    // }
-    // var putOne = function (req, res) {
-    //     var body = req.body
-    //     Movie.findById(req.params.id)
-    //         .exec()
-    //         .then(function (movie) {
-    //             Object.assign(movie, req.body)
-    //             return movie.save()
-    //         })
-    //         .then(function (movie) {
-    //             // res.json('Film aggiornato'); 
-    //             res.json({
-    //                 resp: "Film aggiornato",
-    //                 movie: movie
-    //             })
-    //         })
-    //         .catch(function (err) {
-    //             throw err;
-    //         });
-    // }
+    var deleteOne = function (req, res) {
+        Ricetta.findByIdAndRemove(req.params.id)
+            .exec()
+            .then(function () {
+                res.json("hai cancellato la ricetta richiesta")
+            })
+            .catch(function (err) {
+                res.json(err);
+            });
+    }
+    var putOne = function (req, res) {
+        var body = req.body
+        Ricetta.findById(req.params.id)
+            .exec()
+            .then(function (ricetta) {
+                Object.assign(ricetta, req.body)
+                return ricetta.save()
+            })
+            .then(function (ricetta) {
+                // res.json('Ricetta aggiornata'); 
+                res.json({
+                    resp: "Ricetta aggiornata",
+                    ricetta: ricetta
+                })
+            })
+            .catch(function (err) {
+                throw err;
+            });
+    }
     // var voteOne = function (req, res) {
     //     var voto = req.body.voto
     //     Movie.findById(req.params.id)
@@ -118,8 +117,8 @@ module.exports = (function () {
         getAll: getAll,
         getOne: getOne,
         postOne: postOne,
-        // putOne: putOne,
-        // deleteOne: deleteOne,
+        putOne: putOne,
+        deleteOne: deleteOne,
         // voteOne: voteOne,
     }
 })()
