@@ -51,6 +51,10 @@ var ricetteSchema = new mongoose.Schema({
     immagine: {
         type: String,
         default: "http://manjumalhi.com/wp/wp-content/uploads/2018/01/recipe-placeholder-886x668.jpg"
+    },
+    autore: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Autore'
     }
 });
 
