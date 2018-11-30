@@ -1,4 +1,4 @@
-var express = require('express');
+var express = require('express'); 
 var router = express.Router();
 //richiamo il controller
 var controller = require('./controller')
@@ -10,7 +10,7 @@ router.get('/',controller.getAll)
 router.get('/:id([a-z0-9]{24})',controller.getOne)
 
 //creazione ricetta
-//router.post('/',controller.postOne)
+router.post('/',controller.postOne)
 
 //modifica ricetta
 //router.put('/:id([a-z0-9]{24})',controller.putOne)
