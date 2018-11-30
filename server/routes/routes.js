@@ -3,6 +3,6 @@ module.exports = function(app, express){
     app.use(bodyParser.json());
     var path = require('path');
     
-    //  app.use('/ingredienti', require('../resource/ingredienti/'));
+     app.use('/ingredienti', require('../resource/ingredienti/'));
      app.use('/ricette', require('../resource/ricette/'));
 }

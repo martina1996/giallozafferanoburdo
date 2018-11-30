@@ -3,6 +3,6 @@ var router = express.Router();
 var controller = require('./controller');
 
 router.get('/', controller.getAll);
-router.post('/:id([0-9]{1,4})', controller.postOne)
+router.post('/', controller.postOne)
 
-module.exports = routers;
+module.exports = router;

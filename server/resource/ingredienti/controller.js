@@ -1,6 +1,6 @@
 module.exports = (function() {
 
-    var Ingrediente = require('/Ingrediente');
+    var Ingrediente = require('./Ingrediente');
 
     var getAll = function (req, res) {
 
