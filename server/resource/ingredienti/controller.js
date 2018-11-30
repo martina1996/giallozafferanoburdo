@@ -7,7 +7,7 @@ module.exports = (function() {
         var query = Ingrediente.find();
 
         if (req.query.allergene) {
-            query.where('allergene').equals(true)
+            query.where('allergene').equals(req.query.allergene)
         }
         query.exec ()
         .then (function(ingredienti){
