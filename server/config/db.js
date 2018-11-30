@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 mongoose.connect(
-    'mongodb://admin:admin@ds133630.mlab.com:33630/giallozafferanoburdo',
+    'mongodb://admin:admin1990@ds133630.mlab.com:33630/giallozafferanoburdo',
     {
         useCreateIndex: true,
         useNewUrlParser: true
