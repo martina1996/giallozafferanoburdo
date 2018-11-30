@@ -30,6 +30,10 @@ module.exports = (function () {
                 path: 'ingredienti',
                 select: ['nome']
             })
+            .populate({
+                path: 'autori',
+                select: ['nome']
+            })
             .exec()
 
             .then(function (ricette) {
