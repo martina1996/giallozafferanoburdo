@@ -9,7 +9,9 @@ var ricetteSchema = new mongoose.Schema({
         trim: true,
         index: true
     },
-
+    descrizione: {
+        type: String
+    },
     difficolta: {
         type: String,
         required: true,
