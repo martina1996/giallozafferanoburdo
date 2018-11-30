@@ -45,7 +45,7 @@ var ricetteSchema = new mongoose.Schema({
     }],
     immagine: {
         type: String,
-        default: "http://www.viaggiatorinelmondo.com/wp-content/uploads/2015/10/foca0.jpg"
+        default: "http://manjumalhi.com/wp/wp-content/uploads/2018/01/recipe-placeholder-886x668.jpg"
     }
 });
 
