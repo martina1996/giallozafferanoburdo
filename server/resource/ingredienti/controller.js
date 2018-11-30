@@ -9,6 +9,10 @@ module.exports = (function() {
         if (req.query.allergene) {
             query.where('allergene').equals(true)
         }
+        query.exec ()
+        .then (function(ingredienti){
+            res.json(ingredienti)
+        })
     }
 
     var postOne = function (req, res) {
