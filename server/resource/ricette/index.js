@@ -19,6 +19,6 @@ router.put('/:id([a-z0-9]{24})',controller.putOne)
 router.delete('/:id([a-z0-9]{24})',controller.deleteOne)
 
 //vota ricetta
-//router.put('/voto/:id([a-z0-9]{24})',controller.voteOne)
+router.put('/voto/:id([a-z0-9]{24})',controller.voteOne)
 
 module.exports = router;

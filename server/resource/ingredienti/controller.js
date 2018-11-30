@@ -29,7 +29,7 @@ module.exports = (function() {
         Ingrediente.findByIdAndRemove(req.params.id)
             .exec()
             .then(function () {
-                res.json("hai cancellato l'ingrediente richiesta")
+                res.json("hai cancellato l'ingrediente richiesto")
             })
             .catch(function (err) {
                 res.json(err);

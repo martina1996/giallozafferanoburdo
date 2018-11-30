@@ -94,31 +94,31 @@ module.exports = (function () {
                 throw err;
             });
     }
-    // var voteOne = function (req, res) {
-    //     var voto = req.body.voto
-    //     Movie.findById(req.params.id)
-    //         .exec()
-    //         .then(function (movie) {
-    //             movie.nvoti += 1;
-    //             movie.votoTot += req.body.voto;
-    //             movie.votoMedio = (movie.votoTot / movie.nvoti)
-    //             return movie.save();
-    //         })
-    //         .then(function (data) {
-    //             res.json(data);
-    //         })
-    //         .catch(function (err) {
-    //             res.json(err);
-    //         });
+    var voteOne = function (req, res) {
+        var voto = req.body.voto
+        Ricetta.findById(req.params.id)
+            .exec()
+            .then(function (ricetta) {
+                ricetta.nvoti += 1;
+                ricetta.votoTot += req.body.voto;
+                ricetta.votoMedio = (ricetta.votoTot / ricetta.nvoti)
+                return ricetta.save();
+            })
+            .then(function (data) {
+                res.json(data);
+            })
+            .catch(function (err) {
+                res.json(err);
+            });
 
-    // }
-    // creazione film + modifica di un film + eliminazione + voto il film
+    }
+
     return {
         getAll: getAll,
         getOne: getOne,
         postOne: postOne,
         putOne: putOne,
         deleteOne: deleteOne,
-        // voteOne: voteOne,
+        voteOne: voteOne,
     }
 })()
