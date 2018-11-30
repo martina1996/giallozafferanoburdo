@@ -6,7 +6,7 @@ var autoreSchema = new mongoose.Schema ({
     },
     foto: {
         type: String,
-        default: '/images/avatar.jpg'
+        default: '/images/placeholder-autore.jpg'
     }
 });
 

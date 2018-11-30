@@ -10,7 +10,7 @@ var ingredienteSchema = new mongoose.Schema ({
     },
     immagine: {
         type: String,
-        default: 'https://i2.wp.com/sassyminxnails.com.au/wp-content/uploads/2017/02/icon-ingred.png'
+        default: '/images/placeholder-ingrediente.jpg'
     }
 });
 
