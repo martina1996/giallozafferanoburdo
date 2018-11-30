@@ -41,7 +41,7 @@ var ricetteSchema = new mongoose.Schema({
     },
     ingredienti: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Ingredienti'
+        ref: 'Ingrediente'
     }],
     immagine: {
         type: String,
@@ -54,4 +54,4 @@ ricetteSchema.pre('save', function (next) {
     next()
 })
 
-module.exports = mongoose.model('Ricette', ricetteSchema)
+module.exports = mongoose.model('Ricetta', ricetteSchema)
