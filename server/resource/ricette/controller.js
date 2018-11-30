@@ -18,6 +18,9 @@ module.exports = (function () {
         if (req.query.portata) {
             query.where('portata').equals(req.query.portata).sort({ field: 1 })
         }
+        if (req.query.regione) {
+            query.where('regione').equals(req.query.regione).sort({ field: 1 })
+        }
         if (req.query.portata) {
             var portate = req.query.portata.split(",")
             console.log(portate)

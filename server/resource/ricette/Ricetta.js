@@ -55,6 +55,10 @@ var ricetteSchema = new mongoose.Schema({
     autore: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Autore'
+    },
+    regione: {
+        type: String,
+        enum: ['sardegna', 'marche', 'lazio', 'toscana', 'molise', 'basilicata', 'calabria', 'sicilia', 'puglia', 'piemonte', 'lombardia', 'liguria', 'trentino', 'valle d\'aosta', 'emilia romagna', 'veneto', 'friuli venezia giulia', 'abruzzo', 'campania']
     }
 });
 
