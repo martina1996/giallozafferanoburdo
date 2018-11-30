@@ -34,6 +34,7 @@ var ricetteSchema = new mongoose.Schema({
 
     portata: [{
         type: String,
+        required:true,
         enum: ['antipasto', 'primo', 'secondo', 'contorno', 'dolce', 'piattounico']
     }],
     dataCreazione: {
@@ -54,4 +55,4 @@ ricetteSchema.pre('save', function (next) {
     next()
 })
 
-module.exports = mongoose.model('Ricetta', ricetteSchema)
+module.exports = mongoose.model('Ricetta', ricetteSchema, 'ricette')

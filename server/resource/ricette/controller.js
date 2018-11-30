@@ -1,7 +1,7 @@
 module.exports = (function () {
 
     var Ricette = require('./Ricetta')
-    // var Ingredienti = require('../ingredienti/Ingredienti')
+    var Ingredienti = require('../ingredienti/Ingrediente')
 
     var getAll = function (req, res) {
 

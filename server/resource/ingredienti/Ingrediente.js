@@ -15,4 +15,4 @@ var ingredienteSchema = new mongoose.Schema ({
     }
 });
 
-module.exports = mongoose.model('Ingrediente',ingredienteSchema);
+module.exports = mongoose.model('Ingrediente',ingredienteSchema, 'ingredienti');
