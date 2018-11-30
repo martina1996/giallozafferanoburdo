@@ -114,7 +114,7 @@ module.exports = (function () {
     // creazione film + modifica di un film + eliminazione + voto il film
     return {
         getAll: getAll,
-        // getOne: getOne,
+        getOne: getOne,
         // postOne: postOne,
         // putOne: putOne,
         // deleteOne: deleteOne,
