@@ -21,6 +21,9 @@ module.exports = (function () {
         if (req.query.regione) {
             query.where('regione').equals(req.query.regione).sort({ field: 1 })
         }
+        if (req.query.ingredienti) {
+            query.where('ingredienti').equals(req.query.ingredienti).sort({ field: 1 })
+        }
         if (req.query.portata) {
             var portate = req.query.portata.split(",")
             console.log(portate)
