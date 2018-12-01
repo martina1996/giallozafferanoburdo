@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 var ingredienteSchema = new mongoose.Schema ({
     nome: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     allergene: {
         type: Boolean,
