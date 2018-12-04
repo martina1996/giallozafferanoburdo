@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'PPETRIAL';
+    src: url('/public/app/fonts/PPETRIAL/PPETRIAL.ttf')
+}
+
+.navbar {
+    color: white;
+    font-family: 'PPETRIAL'
+}
+h1 {
+    font-family: 'PPETRIAL';
+    /* text-transform: uppercase; */
+    text-align: center;
+    padding: 10px
+}
+body {
+    background-color: rgb(34, 34, 34)
+}
+.container {
+    background-color: rgb(240, 240, 240);
+    margin-top: 10px;
+    border-radius: 10px
+
+}

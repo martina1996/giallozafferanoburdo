@@ -7,9 +7,12 @@
     <title>Document</title>
     <base href="/">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/app/css/style.css">
 </head>
 <body ng-app="app">
 <ng-include src="'public/app/UI/navbar.html'"></ng-include>
+
+<div class="container">
     <div ui-view></div>
 
 
@@ -17,7 +20,7 @@
 
 
 
-
+</div>
 </body>
 <script src="/jquery/jquery.min.js"></script>
 <script src="/popper/popper.min.js"></script>
