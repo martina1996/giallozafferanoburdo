@@ -2,7 +2,7 @@ angular.module('app')
     .service('IngredientiService', function ($http) {
         var getAll = function () {
             return $http({
-                url: '/ingredienti',
+                url: '/api/ingredienti',
                 method: 'GET'
             })}
         // var postOne = function (nuova) {

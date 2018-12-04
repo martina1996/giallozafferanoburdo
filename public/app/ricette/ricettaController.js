@@ -1,11 +1,9 @@
 angular.module('app')
     // .controller('ricetteController', function ($scope, RicetteService, IngredientiService) {
-    .controller('ricetteController', function ($scope, ricette, ingredienti) {
+    .controller('ricettaController', function ($scope, ricetta) {
 
-        $scope.ricette = ricette;
-        $scope.ingredienti = ingredienti;
-        console.log($scope.ricette)
-        console.log($scope.ingredienti)
+        $scope.ricetta = ricetta;
+        
 
 
 

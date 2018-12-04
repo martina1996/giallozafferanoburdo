@@ -1,0 +1,10 @@
+<h2>Sono sulle lista delle ricette</h2>
+<div ng-repeat="ricetta in ricette track by ricetta._id">
+
+<h3 ng-bind="ricetta.nome"></h3>
+<h6 ng-bind="ricetta.descrizione"></h6>
+<a ui-sref="ricetta({id:ricetta._id})">dettaglio</a>
+
+
+
+</div>

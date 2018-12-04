@@ -3,31 +3,31 @@ angular.module('app')
         
         
         
-        var getAllIngredienti = function () {
-            return $http({
-                url: '/ingredienti',
-                method: 'GET'
-            })
-        }
         
 
         var getAll = function () {
             return $http({
-                url: '/ricette',
+                url: 'api/ricette',
                 method: 'GET'
             })}
         var postOne = function (nuova) {
             return $http({
-                url: '/ricette',
+                url: 'api/ricette',
                 method: 'POST',
                 data: nuova
             })}
         var deleteOne = function (id) {
             return $http({
-                url: '/ricette/' + id,
+                url: 'api/ricette/' + id,
                 method: 'DELETE'
             })}
         
+        var getOne = function (id) {
+            return $http({
+                url: 'api/ricette/' + id,
+                method: 'GET'
+            })
+        }
 
 
 
@@ -35,6 +35,6 @@ angular.module('app')
             getAll:getAll,
             postOne: postOne,
             deleteOne: deleteOne,
-            getAllIngredienti: getAllIngredienti
+            getOne: getOne
         }
     })
