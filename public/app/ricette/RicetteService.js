@@ -1,10 +1,6 @@
 angular.module('app')
     .service('RicetteService', function ($http) {
-        
-        
-        
-        
-
+     
         var getAll = function () {
             return $http({
                 url: 'api/ricette',

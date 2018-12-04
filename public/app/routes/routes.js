@@ -10,8 +10,19 @@ angular.module('app')
         $stateProvider
             .state('home', {
                 url: '/home',
-                template: '<h1>home</h1>'
-            })
+                templateUrl: '/public/app/home/homeTemplate.html',
+                controller: 'homeController',
+                resolve: {
+                    ricette: async function (RicetteService) {
+                        var risposta = await RicetteService.getAll()
+                        return risposta.data;
+                    },
+                    ingredienti: async function (IngredientiService) {
+                        var risposta = await IngredientiService.getAll()
+                        return risposta.data;
+                    }
+            }
+        })
         $stateProvider
             .state('ricette', {
                 url: '/ricette',
