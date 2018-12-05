@@ -1,16 +1,18 @@
-<div class="listaIngredienti">
+<br>
+
     <h2 class="text-center">Lista Ingredienti</h2>
-    <div class="row" ng-repeat="ingrediente in ingredienti track by ingrediente._id">
-        <div class="col-md-2 mb-2">
-            <img class="card-img-top" ng-src="{{ingrediente.immagine}}" alt="Card image cap">
+    <div class="row" ng-repeat="ingrediente in ingredienti track by ingrediente._id" >
+
+        
+        <div class="col-2">
+            <img  style="margin:20px" class="card-img-top" ng-src="{{ingrediente.immagine}}" alt="Card image cap">
         </div>
 
-        <div class="col-md-8 mb-5">
-            <label class="nomeIngrediente" style="margin:20px"><strong>Nome:</strong></label>
-            <span class="title" ng-bind="ingrediente.nome | maiuscolo"></span><br>
-            <label class="allergeneIngrediente" style="margin-left:20px"><strong>Allergene:</strong></label>
+        <div class="col-10">
+            <label  style="margin:20px"><strong>Nome:</strong></label>
+            <span class="title" ng-bind="ingrediente.nome"></span><br>
+            <label style="margin:20px"><strong>Allergene:</strong></label>
             <input type="checkbox" ng-model="ingrediente.allergene" disabled></label><br />
         </div>
         <hr>
     </div>
-</div>
