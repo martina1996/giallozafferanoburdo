@@ -40,7 +40,7 @@ module.exports = (function () {
             .populate({
                 path: 'autore',
                 select: ['nome']
-            })
+            }).sort({_id : -1})
             .exec()
 
             .then(function (ricette) {
