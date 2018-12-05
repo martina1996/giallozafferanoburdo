@@ -1,6 +1,6 @@
 angular.module('app')
     .service('RicetteService', function ($http) {
-        var filtro = ''
+      
 
         var getAll = function (portata) {
             var url = portata ? 'api/ricette?portata=' + portata : 'api/ricette'
@@ -33,13 +33,7 @@ angular.module('app')
                 data:body
             })
         }
-        var setFiltro = function (id, body) {
-            return $http({
-                url: 'api/ricette/' + id,
-                method: 'PUT',
-                data:body
-            })
-        }
+        
 
 
 
@@ -48,7 +42,6 @@ angular.module('app')
             postOne: postOne,
             deleteOne: deleteOne,
             getOne: getOne,
-            putOne:putOne,
-            setFiltro:setFiltro
+            putOne:putOne
         }
     })

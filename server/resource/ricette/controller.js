@@ -87,8 +87,8 @@ module.exports = (function () {
     var deleteOne = function (req, res) {
         Ricetta.findByIdAndRemove(req.params.id)
             .exec()
-            .then(function () {
-                res.json("hai cancellato la ricetta richiesta")
+            .then(function (data) {
+                res.json(data)
             })
             .catch(function (err) {
                 res.status(500).json(err)
