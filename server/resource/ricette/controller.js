@@ -47,8 +47,8 @@ module.exports = (function () {
                 res.json(ricette)
             })
             .catch(function (err) {
-                res.json(err);
-            });
+                res.status(500).json(err)
+            })
     }
 
     var getOne = function (req, res) {
@@ -67,8 +67,8 @@ module.exports = (function () {
                 res.json(ricetta)
             })
             .catch(function (err) {
-                res.json(err);
-            });
+                res.status(500).json(err)
+            })
     }
 
     
@@ -79,8 +79,8 @@ module.exports = (function () {
                 res.json(data)
             })
             .catch(function (err) {
-                res.json(err);
-            });
+                res.status(500).json(err)
+            })
     }
 
 
@@ -91,8 +91,8 @@ module.exports = (function () {
                 res.json("hai cancellato la ricetta richiesta")
             })
             .catch(function (err) {
-                res.json(err);
-            });
+                res.status(500).json(err)
+            })
     }
     var putOne = function (req, res) {
         var body = req.body
@@ -110,8 +110,8 @@ module.exports = (function () {
                 })
             })
             .catch(function (err) {
-                throw err;
-            });
+                res.status(500).json(err)
+            })
     }
     var voteOne = function (req, res) {
         var voto = req.body.voto
@@ -127,8 +127,8 @@ module.exports = (function () {
                 res.json(data);
             })
             .catch(function (err) {
-                res.json(err);
-            });
+                res.status(500).json(err)
+            })
 
     }
 
