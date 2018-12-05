@@ -50,6 +50,10 @@ angular.module('app')
                         var risposta = await RicetteService.getOne($stateParams.id)
                         // var risposta = await RicetteService.getOne($stateParams.ciccio)
                         return risposta.data;
+                    },
+                    ingredienti: async function (IngredientiService) {
+                        var risposta = await IngredientiService.getAll()
+                        return risposta.data;
                     }
                 }
             })

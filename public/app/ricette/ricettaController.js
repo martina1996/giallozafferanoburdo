@@ -1,16 +1,32 @@
 angular.module('app')
     // .controller('ricetteController', function ($scope, RicetteService, IngredientiService) {
-    .controller('ricettaController', function ($scope, ricetta, RicetteService, $state) {
+    .controller('ricettaController', function ($scope, ricetta, RicetteService, $state, ingredienti) {
 
         $scope.ricetta = ricetta;
+        
+        $scope.ingredienti = ingredienti;
+
 
         $scope.modifica = function(){
+
+              var ids = [];
+              $scope.ricetta.ingredienti.forEach(ing => ids.push(ing._id))
+              $scope.ricetta.ingredienti = ids
+
                    RicetteService.putOne($scope.ricetta._id, $scope.ricetta)
                         .then(risposta => {
                             $state.go('ricette')
                         })
                  }
-        
+             
+                 $scope.aggiungi = function(){
+                     var ing = $scope.ingrediente
+                     $scope.ricetta.ingredienti.push(ing)
+                 }
+                 $scope.cancella = function(id){
+                     var indice = $scope.ricetta.ingredienti.findIndex(ing => ing._id == id)
+                     $scope.ricetta.ingredienti.splice(indice, 1)
+                 }
 
   })
 
