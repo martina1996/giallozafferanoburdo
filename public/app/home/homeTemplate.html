@@ -1,13 +1,22 @@
-<h2>Sono sulla home</h2>
+<div class="row">
+    <div class="col-12">
+      <h2>Sono sulla home</h2>  
+    </div>
+</div>
 
 
-<ui-carousel slides="ricette" slides-to-show="1" slides-to-scroll="3" initial-slide="1" autoplay="true"
-    autoplay-speed="2000" dots="true">
+<div class="row">
+    <div class="col-12">
+       <ui-carousel slides="slides" slides-to-show="1" slides-to-scroll="3" initial-slide="1" >
 
     <carousel-item>
-        <h3>{{ item.nome }}</h3>
+        <h2>{{ item.title }}</h2>
+        <img src="{{ item.image}}" alt="Image" />
     </carousel-item>
-</ui-carousel>
+</ui-carousel> 
+    </div>
+</div>
+
 
 
 
