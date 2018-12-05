@@ -71,7 +71,8 @@
             <!-- <select ng-options="item as item.label for item in items track by item.id" ng-model="selected"></select> -->
             <select ng-change="aggiungi()" class="form-control" ng-options="ingrediente as ingrediente.nome for ingrediente in ingredienti track by ingrediente._id"
                 ng-model="ingrediente"></select>
-             <span ng-repeat="ing in ricetta.ingredienti" ng-click="cancella(ing._id)">{{ing.nome}} <i class="fas fa-times"></i></span>
+             <span ng-repeat="ing in ricetta.ingredienti track by index" ng-click="cancella(ing._id)">{{ing.nome}} <i class="fas fa-times"></i></span>
+             
         </div>
     </div>
     <div class="row">
