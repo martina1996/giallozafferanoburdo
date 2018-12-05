@@ -28,6 +28,12 @@ angular.module('app')
                      $scope.ricetta.ingredienti.splice(indice, 1)
                  }
 
+             $scope.deleteOne = function (id) {
+             RicetteService.deleteOne(id)
+                .then(risposta => {
+                    $state.go('ricette')
+                })
+         }
   })
 
 
