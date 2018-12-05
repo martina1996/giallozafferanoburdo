@@ -33,3 +33,17 @@
         </div>
         
 </div>  -->
+
+
+<div class="row">
+    <div class="col-4" ng-repeat="ricetta in ricette track by ricetta._id" >
+    <div class="card">
+        <img class="card-img-top" ng-src={{ricetta.immagine}} alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title text-center" ng-bind="ricetta.nome">Card title</h5>
+            <h1 class="bottone">
+                <a href="#" class=" btn btn-dark">Vai al dettaglio</a></h1>
+        </div>
+     </div>
+  </div>  
+ </div>   
