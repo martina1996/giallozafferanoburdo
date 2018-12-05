@@ -3,9 +3,9 @@ angular.module('app')
         // toglie il #!
         $locationProvider.html5Mode(true).hashPrefix('!')
         // redirect alla home se non trova url
-        $urlRouterProvider.otherwise('/')
+        $urlRouterProvider.otherwise('/home')
 
-        $urlRouterProvider.when('', '/')
+        $urlRouterProvider.when('', '/home')
 
         $stateProvider
             .state('home', {
