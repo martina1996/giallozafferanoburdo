@@ -1,9 +1,10 @@
 angular.module('app')
     .service('RicetteService', function ($http) {
      
-        var getAll = function () {
+        var getAll = function (portata) {
+            var url = portata ? 'api/ricette?portata=' + portata : 'api/ricette'
             return $http({
-                url: 'api/ricette',
+                url: url,
                 method: 'GET'
             })}
         var postOne = function (nuova) {

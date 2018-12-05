@@ -1,0 +1,8 @@
+<h2>Lista ingredienti</h2>
+<div ng-repeat="ingrediente in ingredienti track by ingrediente._id">
+
+<h3 ng-bind="ingrediente.nome"></h3>
+<h6 ng-bind="ingrediente.allergene"></h6>
+<img ng-src="{{ingrediente.immagine}}"/>
+
+</div>

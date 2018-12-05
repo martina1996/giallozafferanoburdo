@@ -1,35 +1,21 @@
 <div class="row">
-    <div class="col-12">
-      <h2>Sono sulla home</h2>  
+    <div class="col-12 text-center">
+      <h1> Fame, vero? </h1>  
     </div>
 </div>
+
+
 
 
 <div class="row">
-    <div class="col-12">
-       <ui-carousel slides="ctrl.slides" slides-to-show="1" slides-to-scroll="3" initial-slide="1" >
-
-    <carousel-item>
-        <h2>{{ item.title }}</h2>
-        <img src="{{ item.image}}" alt="Image" />
-    </carousel-item>
-</ui-carousel> 
-    </div>
-</div>
-
-
-
-
-<!-- <div  id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    
-    <div class="carousel-inner">
-        <div class="carousel-item active" ng-repeat="ricetta in ricette track by ricetta._id">
-            <img ng-bind="ricetta.immagine" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5 ng-bind="ricetta.nome"></h5>
-                <div class="carousel-caption">
-                    <h3 class="h3-responsive">Light mask</h3>
-            </div>
+    <div class="col-4" ng-repeat="ricetta in ricette track by ricetta._id" >
+    <div class="card">
+        <img class="card-img-top" ng-src={{ricetta.immagine}} alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title text-center" ng-bind="ricetta.nome">Card title</h5>
+            <h1 class="bottone">
+                <a href="#" class=" btn btn-dark">Vai al dettaglio</a></h1>
         </div>
-        
-</div>  -->
+     </div>
+  </div>  
+ </div>   

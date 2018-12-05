@@ -11,7 +11,7 @@ var ingredienteSchema = new mongoose.Schema ({
     },
     immagine: {
         type: String,
-        default: '/images/placeholder-ingrediente.jpg'
+        default: 'images/placeholder-ingrediente.jpg'
     }
 });
 
