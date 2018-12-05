@@ -39,7 +39,7 @@ module.exports = (function () {
             })
             .populate({
                 path: 'autore',
-                select: ['nome']
+                select: ['nome', 'allergene']
             }).sort({_id : -1})
             .exec()
 
@@ -56,7 +56,7 @@ module.exports = (function () {
         Ricetta.findById(req.params.id)
             .populate({
                 path: 'ingredienti',
-                select: ['nome']
+                select: ['nome', 'allergene']
             })
             .populate({
                 path: 'autore',

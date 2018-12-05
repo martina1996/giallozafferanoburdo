@@ -13,6 +13,12 @@ $scope.cambiaPortata = function (portata) {
     $state.go('ricette', {portata: portata})
 }
 
+$scope.cambiaAllergene = function (allergene) {
+    $rootScope.allergene = allergene
+    console.log(allergene)
+    $state.go('ricette')
+}
+
 
 
 

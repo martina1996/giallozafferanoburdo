@@ -32,7 +32,19 @@
 
                 </div>
             </li>
+            <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Sei allergico?
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown" ng-controller="navbarController">
             
+                    <option class="dropdown-item" ng-click="cambiaAllergene('true')"> Sì</option>
+                    <option class="dropdown-item" ng-click="cambiaAllergene('false')"> No</option>
+                    
+            
+                </div>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" ui-sref="inserisci">Inserisci una nuova ricetta</a>
             </li>
