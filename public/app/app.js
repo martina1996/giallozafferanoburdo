@@ -1,3 +1,3 @@
-angular.module('app', ['ui.router']).run(function(){
+angular.module('app', ['ui.router', 'ui.carousel']).run(function(){
     console.log("Angular is running!")
 })

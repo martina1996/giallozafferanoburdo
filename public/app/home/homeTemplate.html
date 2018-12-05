@@ -1,32 +1,13 @@
 <h2>Sono sulla home</h2>
 
-<!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item" ng-repeat="el in [1,2,3]">
-            <img class="d-block w-100" src="/public/images/placeholder-ricetta.jpg" alt="First slide">
-        </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div> -->
 
+<ui-carousel slides="ricette" slides-to-show="1" slides-to-scroll="3" initial-slide="1" autoplay="true"
+    autoplay-speed="2000" dots="true">
 
-<mdb-carousel [isControls]="true" [animation]="'slide'" mdb-carousel [isControls]="true" class="carousel slide carousel-fade" [animation]="'fade'">
-    <!--First slide-->
-    <mdb-carousel-item ng-repeat="ricetta in ricette track by ricetta._id">
-        <img class="d-block w-100" ng-bind="ricetta.immagine" alt="First slide">
-        <div class="carousel-caption d-none d-md-block"></div>
-        <h5 class="h3-responsive" ng-bind="ricetta.nome"></h5>
-    </mdb-carousel-item>
-    <!--/First slide-->
-    
-</mdb-carousel>
+    <carousel-item>
+        <h3>{{ item.nome }}</h3>
+    </carousel-item>
+</ui-carousel>
 
 
 
