@@ -1,17 +1,17 @@
 angular.module('app')
     // .controller('ricetteController', function ($scope, RicetteService, IngredientiService) {
-    .controller('navbarController', function ($scope, $state) {
+    .controller('navbarController', function ($scope, $state, $rootScope) {
 
      
 
-$scope.portata
-console.log ($scope.portata)
+
+$scope.$watch('filtro', function(newValue){
+     $rootScope.filtro = newValue
+})
+
 $scope.cambiaPortata = function (portata) {
     $state.go('ricette', {portata: portata})
 }
-
-
-
 
 
 

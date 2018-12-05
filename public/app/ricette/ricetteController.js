@@ -1,11 +1,14 @@
 angular.module('app')
     // .controller('ricetteController', function ($scope, RicetteService, IngredientiService) {
-    .controller('ricetteController', function ($scope, ricette, ingredienti) {
+    .controller('ricetteController', function ($scope, ricette, ingredienti, $rootScope) {
 
         $scope.ricette = ricette;
         $scope.ingredienti = ingredienti;
         console.log($scope.ricette)
         console.log($scope.ingredienti)
+
+        
+        })
 
 
 
@@ -75,7 +78,7 @@ angular.module('app')
 
         // richiama getAll
 
-    })
+
 
 
 

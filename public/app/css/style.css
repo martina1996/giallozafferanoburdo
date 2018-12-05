@@ -3,6 +3,11 @@
     src: url('/public/app/fonts/PPETRIAL/PPETRIAL.ttf')
 }
 
+.nomeIngrediente, .allergeneIngrediente {
+    color: black;
+    font-family: 'PPETRIAL'
+}
+
 .navbar {
     color: white;
     font-family: 'PPETRIAL'
