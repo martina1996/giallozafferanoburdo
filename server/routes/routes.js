@@ -4,9 +4,8 @@ module.exports = function (app, express) {
     var path = require('path');
 
     
-
-
     app.use('/public', express.static(path.join(__dirname, '..', '..', 'public')));
+    app.use('/images', express.static(path.join(__dirname, '..', '..', 'public','images')));
     app.use('/angular', express.static(path.join(__dirname, '..', '..', 'node_modules', 'angular')));
     app.use('/bootstrap', express.static(path.join(__dirname, '..', '..', 'node_modules', 'bootstrap', 'dist')));
     app.use('/jquery', express.static(path.join(__dirname, '..', '..', 'node_modules', 'jquery', 'dist')));
