@@ -69,8 +69,18 @@ angular.module('app')
                     }
                 }
             })
-
-
+        $stateProvider
+            .state('inserisci', {
+                url: '/inserisci',
+                templateUrl: '/public/app/ricette/inserisciTemplate.html',
+                controller: 'inserisciController',
+                resolve: {
+                    ricette: async function (RicetteService) {
+                        var risposta = await RicetteService.putOne()
+                        return risposta.data;
+                    }
+                }
+            })
 
 
 
