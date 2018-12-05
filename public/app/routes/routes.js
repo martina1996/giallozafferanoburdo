@@ -11,7 +11,7 @@ angular.module('app')
             .state('home', {
                 url: '/home',
                 templateUrl: '/public/app/home/homeTemplate.html',
-                controller: 'homeController',
+                controller: 'homeController as ctrl',
                 resolve: {
                     ricette: async function (RicetteService) {
                         var risposta = await RicetteService.getAll()
