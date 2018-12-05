@@ -1,4 +1,31 @@
-<h2>Sono sulle lista delle ricette</h2>
+<br>
+<div class="row" class="div1" ng-repeat="ricetta in ricette track by ricetta._id">
+        <div class="col-md-4 mb-5">
+                <img class="card-img-top" ng-bind="ricetta.immagine" src="/public/images/placeholder-ricetta.jpg" alt="Card image cap">
+        </div>
+        
+        <div class="col-md-8 mb-5">
+                <h3 class="title" ng-bind="ricetta.nome | maiuscolo"></h3><br>
+                <label><strong>Difficoltà:</strong></label>
+                <span class="text" ng-bind="ricetta.difficolta"></span><br>
+                <label><strong>Voto Medio:</strong></label>
+                <span class="text" ng-bind="ricetta.votoMedio"></span><br>
+                <label><strong>Portata:</strong></label>
+                <span class="text" ng-bind="ricetta.portata"></span><br>
+                <label><strong>Regione:</strong></label>
+                <span class="text" ng-bind="ricetta.regione"></span><br>
+                <br>
+                <a ui-sref="ricetta({id:ricetta._id})" class="btn btn-dark">Dettaglio Ricetta</a>
+               
+                
+        </div>
+
+
+
+<hr>
+</div>
+
+<!-- <h2>Sono sulle lista delle ricette</h2>
 <div ng-repeat="ricetta in ricette track by ricetta._id">
 
 <h3 ng-bind="ricetta.nome"></h3>
@@ -7,4 +34,4 @@
 
 
 
-</div>
+</div> -->

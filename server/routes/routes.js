@@ -11,6 +11,7 @@ module.exports = function (app, express) {
     app.use('/jquery', express.static(path.join(__dirname, '..', '..', 'node_modules', 'jquery', 'dist')));
     app.use('/popper', express.static(path.join(__dirname, '..', '..', 'node_modules', 'popper.js', 'dist', 'umd')));
     app.use('/ui-router', express.static(path.join(__dirname, '..', '..', 'node_modules', '@uirouter', 'angularjs', 'release')));
+    app.use('/angular-ui-carousel', express.static(path.join(__dirname, '..', '..', 'node_modules', 'angular-ui-carousel', 'dist')));
 
 
     // scrivo api per dirgli che sono api (poi devo scrivere api nei getAll ecc...)
