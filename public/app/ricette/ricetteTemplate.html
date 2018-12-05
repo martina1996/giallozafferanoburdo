@@ -1,11 +1,11 @@
 <br>
 <div class="row" class="div1" ng-repeat="ricetta in ricette | filter : filtro track by ricetta._id">
         <div class="col-md-4 mb-5">
-                <img class="card-img-top" ng-src={{ricetta.immagine}} alt="Card image cap">
+                <img class="card-img-top" ng-src={{ricetta.immagine}} alt="Card image cap" width="290" height="270">
         </div>
         
         <div class="col-md-8 mb-5">
-                <h1 class="title" ng-bind="ricetta.nome | maiuscolo"></h1><br>
+                <h2 class="title" ng-bind="ricetta.nome | maiuscolo"></h2><br>
                 <label><strong>Difficoltà:</strong></label>
                 <span class="text" ng-bind="ricetta.difficolta"></span><br>
                 <label><strong>Voto Medio:</strong></label>
