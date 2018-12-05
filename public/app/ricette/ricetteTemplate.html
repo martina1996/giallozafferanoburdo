@@ -5,7 +5,7 @@
         </div>
         
         <div class="col-md-8 mb-5">
-                <h3 class="title" ng-bind="ricetta.nome | maiuscolo"></h3><br>
+                <h1 class="title" ng-bind="ricetta.nome | maiuscolo"></h1><br>
                 <label><strong>Difficoltà:</strong></label>
                 <span class="text" ng-bind="ricetta.difficolta"></span><br>
                 <label><strong>Voto Medio:</strong></label>
@@ -14,6 +14,8 @@
                 <span class="text" ng-bind="ricetta.portata[0]"></span><br>
                 <label><strong>Regione:</strong></label>
                 <span class="text" ng-bind="ricetta.regione"></span><br>
+                <!-- <label><strong>Autore:</strong></label>
+                <span class="text" ng-bind="autore.nome"></span><br> -->
                 <br>
                 <h1 class="bottone"><a ui-sref="ricetta({id:ricetta._id})" class="btn btn-dark">Dettaglio Ricetta</a></h1>
                
