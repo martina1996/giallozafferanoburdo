@@ -11,6 +11,9 @@ module.exports = (function() {
         .then (function(autori){
             res.json(autori)
         })
+            .catch(function (err) {
+                res.status(500).json(err)
+            })
     }
 
     var postOne = function (req, res) {
@@ -19,9 +22,9 @@ module.exports = (function() {
             .then(function (data) {
                 res.json(data)
             })
-            .catch(function (err) {
-                res.json(err);
-            });
+            .catch (function (err) {
+    res.status(500).json(err)
+})
     }
     var deleteOne = function (req, res) {
         Autore.findByIdAndRemove(req.params.id)
@@ -30,8 +33,8 @@ module.exports = (function() {
                 res.json("hai cancellato l'autore richiesto")
             })
             .catch(function (err) {
-                res.json(err);
-            });
+                res.status(500).json(err)
+            })
     }
     
     return {
