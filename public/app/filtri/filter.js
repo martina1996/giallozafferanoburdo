@@ -11,14 +11,15 @@ angular.module('app')
 
         return function (input, allergene) {
             if (allergene == undefined) return input;
-            if (allergene == true) {
+            if (allergene == "true") {
                 return input.filter(function (ricetta) {
                     return ricetta.ingredienti.some(function (ingrediente) {
                         return ingrediente.allergene == true
                     })
                 })
+
             }
-            if (allergene == false) {
+            if (allergene == "false") {
                 return input.filter(function (ricetta) {
                     return ricetta.ingredienti.every(function (ingrediente) {
                         return ingrediente.allergene == false

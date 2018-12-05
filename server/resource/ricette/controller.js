@@ -35,11 +35,11 @@ module.exports = (function () {
         query
             .populate({
                 path: 'ingredienti',
-                select: ['nome']
+                select: ['nome', 'allergene']
             })
             .populate({
                 path: 'autore',
-                select: ['nome', 'allergene']
+                select: ['nome']
             }).sort({_id : -1})
             .exec()
 
