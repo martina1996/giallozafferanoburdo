@@ -21,14 +21,14 @@
                     aria-haspopup="true" aria-expanded="false">
                     Portata
                 </a>
-                <div class="dropdown-menu" ng-model="portata" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu"  ng-model="portata" aria-labelledby="navbarDropdown" ng-controller="navbarController">
 
-                        <option class="dropdown-item" value="primo">Primo</option>
-                        <option class="dropdown-item" value="secondo">Secondo</option>
-                        <option class="dropdown-item" value="antipasto">Antipasto</option>
-                        <option class="dropdown-item" value="dolce">Dolce</option>
-                        <option class="dropdown-item" value="contorno">Contorno</option>
-                        <option class="dropdown-item" value="piattounico">Piatto Unico</option>
+                        <option class="dropdown-item" ng-click="cambiaPortata('primo')">Primo</option>
+                        <option class="dropdown-item" ng-click="cambiaPortata('secondo')">Secondo</option>
+                        <option class="dropdown-item" ng-click="cambiaPortata('antipasto')" >Antipasto</option>
+                        <option class="dropdown-item" ng-click="cambiaPortata('dolce')" >Dolce</option>
+                        <option class="dropdown-item" ng-click="cambiaPortata('contorno')" >Contorno</option>
+                        <option class="dropdown-item" ng-click="cambiaPortata('piattounico')" >Piatto Unico</option>
 
                 </div>
             </li>
@@ -38,7 +38,7 @@
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Cerca ricette" aria-label="Search">
+            <input class="form-control mr-sm-2" type="search" placeholder="Cerca ricette" aria-label="Search" ng-model="filtro">
             <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Cerca</button>
         </form>
     </div>

@@ -13,6 +13,9 @@ module.exports = (function() {
         .then (function(ingredienti){
             res.json(ingredienti)
         })
+            .catch(function (err) {
+                res.status(500).json(err)
+            })
     }
 
     var postOne = function (req, res) {
@@ -22,8 +25,8 @@ module.exports = (function() {
                 res.json(data)
             })
             .catch(function (err) {
-                res.json(err);
-            });
+                res.status(500).json(err)
+            })
     }
     var deleteOne = function (req, res) {
         Ingrediente.findByIdAndRemove(req.params.id)
@@ -32,8 +35,8 @@ module.exports = (function() {
                 res.json("hai cancellato l'ingrediente richiesto")
             })
             .catch(function (err) {
-                res.json(err);
-            });
+                res.status(500).json(err)
+            })
     }
     
     return {

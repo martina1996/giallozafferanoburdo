@@ -1,9 +1,11 @@
 angular.module('app')
     .service('RicetteService', function ($http) {
-     
-        var getAll = function () {
+        var filtro = ''
+
+        var getAll = function (portata) {
+            var url = portata ? 'api/ricette?portata=' + portata : 'api/ricette'
             return $http({
-                url: 'api/ricette',
+                url: url,
                 method: 'GET'
             })}
         var postOne = function (nuova) {
@@ -24,6 +26,20 @@ angular.module('app')
                 method: 'GET'
             })
         }
+        var putOne = function (id, body) {
+            return $http({
+                url: 'api/ricette/' + id,
+                method: 'PUT',
+                data:body
+            })
+        }
+        var setFiltro = function (id, body) {
+            return $http({
+                url: 'api/ricette/' + id,
+                method: 'PUT',
+                data:body
+            })
+        }
 
 
 
@@ -31,6 +47,8 @@ angular.module('app')
             getAll:getAll,
             postOne: postOne,
             deleteOne: deleteOne,
-            getOne: getOne
+            getOne: getOne,
+            putOne:putOne,
+            setFiltro:setFiltro
         }
     })

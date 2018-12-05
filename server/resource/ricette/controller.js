@@ -16,19 +16,20 @@ module.exports = (function () {
             query.where('votomax').lt(req.query.votomax).sort({ field: 1 })
         }
         if (req.query.portata) {
+            console.log(req.query.portata)
             query.where('portata').equals(req.query.portata).sort({ field: 1 })
         }
         if (req.query.regione) {
             query.where('regione').equals(req.query.regione).sort({ field: 1 })
         }
-        if (req.query.ingredienti) {
+        if (req.query.ingredienti ) {
             query.where('ingredienti').equals(req.query.ingredienti).sort({ field: 1 })
         }
-        if (req.query.portata) {
-            var portate = req.query.portata.split(",")
-            console.log(portate)
-            query.where('portata').in(portate).sort({ field: 1 })
-        }
+        // if (req.query.portata) {
+        //     var portate = req.query.portata.split(",")
+        //     console.log(portate)
+        //     query.where('portata').in(portate).sort({ field: 1 })
+        // }
 
 
         query
@@ -39,15 +40,15 @@ module.exports = (function () {
             .populate({
                 path: 'autore',
                 select: ['nome']
-            })
+            }).sort({_id : -1})
             .exec()
 
             .then(function (ricette) {
                 res.json(ricette)
             })
             .catch(function (err) {
-                res.json(err);
-            });
+                res.status(500).json(err)
+            })
     }
 
     var getOne = function (req, res) {
@@ -66,8 +67,8 @@ module.exports = (function () {
                 res.json(ricetta)
             })
             .catch(function (err) {
-                res.json(err);
-            });
+                res.status(500).json(err)
+            })
     }
 
     
@@ -78,8 +79,8 @@ module.exports = (function () {
                 res.json(data)
             })
             .catch(function (err) {
-                res.json(err);
-            });
+                res.status(500).json(err)
+            })
     }
 
 
@@ -90,8 +91,8 @@ module.exports = (function () {
                 res.json("hai cancellato la ricetta richiesta")
             })
             .catch(function (err) {
-                res.json(err);
-            });
+                res.status(500).json(err)
+            })
     }
     var putOne = function (req, res) {
         var body = req.body
@@ -109,8 +110,8 @@ module.exports = (function () {
                 })
             })
             .catch(function (err) {
-                throw err;
-            });
+                res.status(500).json(err)
+            })
     }
     var voteOne = function (req, res) {
         var voto = req.body.voto
@@ -126,8 +127,8 @@ module.exports = (function () {
                 res.json(data);
             })
             .catch(function (err) {
-                res.json(err);
-            });
+                res.status(500).json(err)
+            })
 
     }
 
