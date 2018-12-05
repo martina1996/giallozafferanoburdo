@@ -1,1 +1,83 @@
-<h2>Sono sulle lista delle ricette</h2>
+<div class="row">
+    <div class="col-12 mx-auto text-center">
+        <h1 class="title" ng-bind="ricetta.nome | maiuscolo"></h1>
+        <img ng-src="/public/images/placeholder-ricetta.jpg" ng-bind="ricetta.immagine" alt="Responsive image" width="782px"
+            height="250px">
+    </div>
+</div>
+<br>
+<h1>Modifica la ricetta</h1>
+<br>
+<form ng-submit="modifica()">
+    <div class="row">
+        <div class="col-12">
+            <label><strong>Nome:</strong></label>
+            <input class="form-control" type="text" ng-model="ricetta.nome">
+            <label><strong>Descrizione:</strong></label>
+            <textarea class="form-control" type="text" ng-model="ricetta.descrizione"></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <label><strong>Difficoltà:</strong></label>
+            <select class="form-control" ng-model="ricetta.difficolta">
+                <option value="bassa"> Bassa </option>
+                <option value="media"> Media </option>
+                <option value="alta"> Alta </option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label><strong>Portata:</strong></label>
+            <select class="form-control" ng-model="ricetta.portata">
+                <option value="antipasto"> Antipasto </option>
+                <option value="primo"> Primo </option>
+                <option value="secondo"> Secondo </option>
+                <option value="contorno"> Contorno </option>
+                <option value="piattounico"> Piatto unico </option>
+                <option value="dolce"> Dolce </option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label><strong>Regione:</strong></label>
+            <select class="form-control" ng-model="ricetta.regione">
+                <option value="sardegna"> Sardegna </option>
+                <option value="marche"> Marche </option>
+                <option value="lazio"> Lazio </option>
+                <option value="toscana"> toscana </option>
+                <option value="molise"> molise </option>
+                <option value="basilicata"> basilicata </option>
+                <option value="calabria"> calabria </option>
+                <option value="sicilia"> sicilia </option>
+                <option value="puglia"> puglia </option>
+                <option value="piemonte"> piemonte </option>
+                <option value="lombardia"> lombardia </option>
+                <option value="liguria"> liguria </option>
+                <option value="trentino"> trentino </option>
+                <option value="valle d'aosta"> valle d'aosta </option>
+                <option value="emilia romagna"> emilia romagna </option>
+                <option value="veneto"> veneto </option>
+                <option value="friuli venezia giulia"> friuli venezia giulia </option>
+                <option value="abruzzo"> abruzzo </option>
+                <option value="campania"> campania </option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label><strong>Ingredienti:</strong></label>
+            <!-- <select type="text" ng-model="nuova.ingrediente" >
+                    <option value="{{ing.nome}}" ng-repeat="ing in ingredienti track by $index" ng-bind="ing.nome"> </option> -->
+
+
+            <!-- <select ng-options="item as item.label for item in items track by item.id" ng-model="selected"></select> -->
+            <select class="form-control" ng-options="ingrediente as ingrediente.nome for ingrediente in ingredienti track by ingrediente._id"
+                ng-model="ingrediente.nome"></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+
+            <label><strong>Immagine:</strong></label>
+            <input class="form-control" type="text" ng-model="ricetta.immagine">
+            <br>
+            <h1 class="bottone"><button type="submit" class="btn btn-dark"> modifica</button></h1>
+</form>

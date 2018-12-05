@@ -24,6 +24,13 @@ angular.module('app')
                 method: 'GET'
             })
         }
+        var putOne = function (id, body) {
+            return $http({
+                url: 'api/ricette/' + id,
+                method: 'PUT',
+                data:body
+            })
+        }
 
 
 
@@ -31,6 +38,7 @@ angular.module('app')
             getAll:getAll,
             postOne: postOne,
             deleteOne: deleteOne,
-            getOne: getOne
+            getOne: getOne,
+            putOne:putOne
         }
     })

@@ -1,11 +1,18 @@
 angular.module('app')
     // .controller('ricetteController', function ($scope, RicetteService, IngredientiService) {
-    .controller('ricettaController', function ($scope, ricetta) {
+    .controller('ricettaController', function ($scope, ricetta, RicetteService, $state) {
 
         $scope.ricetta = ricetta;
+
+        $scope.modifica = function(){
+                   RicetteService.putOne($scope.ricetta._id, $scope.ricetta)
+                        .then(risposta => {
+                            $state.go('ricette')
+                        })
+                 }
         
 
-
+  })
 
 
 
@@ -73,7 +80,7 @@ angular.module('app')
 
         // richiama getAll
 
-    })
+  
 
 
 

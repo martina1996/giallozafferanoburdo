@@ -1,7 +1,7 @@
 <br>
 <div class="row" class="div1" ng-repeat="ricetta in ricette track by ricetta._id">
         <div class="col-md-4 mb-5">
-                <img class="card-img-top" ng-bind="ricetta.immagine" src="/public/images/placeholder-ricetta.jpg" alt="Card image cap">
+                <img class="card-img-top" ng-src={{ricetta.immagine}} alt="Card image cap">
         </div>
         
         <div class="col-md-8 mb-5">
@@ -15,7 +15,7 @@
                 <label><strong>Regione:</strong></label>
                 <span class="text" ng-bind="ricetta.regione"></span><br>
                 <br>
-                <a ui-sref="ricetta({id:ricetta._id})" class="btn btn-dark">Dettaglio Ricetta</a>
+                <h1 class="bottone"><a ui-sref="ricetta({id:ricetta._id})" class="btn btn-dark">Dettaglio Ricetta</a></h1>
                
                 
         </div>
