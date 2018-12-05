@@ -12,6 +12,9 @@ module.exports = function (app, express) {
     app.use('/popper', express.static(path.join(__dirname, '..', '..', 'node_modules', 'popper.js', 'dist', 'umd')));
     app.use('/ui-router', express.static(path.join(__dirname, '..', '..', 'node_modules', '@uirouter', 'angularjs', 'release')));
     app.use('/angular-ui-carousel', express.static(path.join(__dirname, '..', '..', 'node_modules', 'angular-ui-carousel', 'dist')));
+    app.use('/toast', express.static(path.join(__dirname, '..', '..', 'node_modules', 'angularjs-toast')));
+    app.use('/angular-sanitize', express.static(path.join(__dirname, '..', '..', 'node_modules', 'angular-sanitize')));
+    app.use('/angular-animate', express.static(path.join(__dirname, '..', '..', 'node_modules', 'angular-animate')));
 
 
     // scrivo api per dirgli che sono api (poi devo scrivere api nei getAll ecc...)

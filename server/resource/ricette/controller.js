@@ -73,8 +73,8 @@ module.exports = (function () {
 
     
     var postOne = function (req, res) {
-        var nuovo = new Ricetta(req.body)
-        nuovo.save()
+        var nuova = new Ricetta(req.body)
+        nuova.save()
             .then(function (data) {
                 res.json(data)
             })

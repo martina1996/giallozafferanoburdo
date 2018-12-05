@@ -1,41 +1,40 @@
 angular.module('app')
     // .controller('ricetteController', function ($scope, RicetteService, IngredientiService) {
-    .controller('inserisciController', function ($scope, ricetta, RicetteService, $state, ingredienti) {
+    .controller('inserisciController', function ($scope, RicetteService, ingredienti, toast) {
 
-        $scope.ricetta = ricetta;
 
         $scope.ingredienti = ingredienti;
-
-
-        $scope.inserisci = function () {
-
-            var ids = [];
-            $scope.ricetta.ingredienti.forEach(ing => ids.push(ing._id))
-            $scope.ricetta.ingredienti = ids
-
-            RicetteService.putOne($scope.ricetta._id, $scope.ricetta)
-                .then(risposta => {
-                    $state.go('ricette')
-                })
+        $scope.nuova = {
+            ingredienti: []
         }
+
+
+
 
         $scope.aggiungi = function () {
             var ing = $scope.ingrediente
-            $scope.ricetta.ingredienti.push(ing)
+            $scope.nuova.ingredienti.push(ing)
         }
         $scope.cancella = function (id) {
-            var indice = $scope.ricetta.ingredienti.findIndex(ing => ing._id == id)
-            $scope.ricetta.ingredienti.splice(indice, 1)
+            var indice = $scope.nuova.ingredienti.findIndex(ing => ing._id == id)
+            $scope.nuova.ingredienti.splice(indice, 1)
         }
 
+        
+        
+        $scope.inseriscinuova = function () {
+            RicetteService.postOne($scope.nuova)
+                .then(risposta => {
+                    console.log(risposta)
+                    toast({
+                        duration: 10000,
+                        message: "Ricetta salvata!",
+                        className: "alert-success",
+                        position: 'center'
+                    })
+                })
+        }
     })
-$scope.inseriscinuova = function () {
-    RicetteService.postOne($scope.nuova)
-        .then(risposta => {
-            init()
-        })
-}
-    
 
 
 

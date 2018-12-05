@@ -75,8 +75,8 @@ angular.module('app')
                 templateUrl: '/public/app/ricette/inserisciTemplate.html',
                 controller: 'inserisciController',
                 resolve: {
-                    ricette: async function (RicetteService) {
-                        var risposta = await RicetteService.putOne()
+                    ingredienti: async function (IngredientiService) {
+                        var risposta = await IngredientiService.getAll()
                         return risposta.data;
                     }
                 }
