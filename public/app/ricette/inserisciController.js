@@ -1,6 +1,6 @@
 angular.module('app')
     // .controller('ricetteController', function ($scope, RicetteService, IngredientiService) {
-    .controller('inserisciController', function ($scope, RicetteService, ingredienti, toast) {
+    .controller('inserisciController', function ($scope, RicetteService, ingredienti, toast, $state) {
 
 
         $scope.ingredienti = ingredienti;
@@ -25,6 +25,7 @@ angular.module('app')
         $scope.inseriscinuova = function () {
             RicetteService.postOne($scope.nuova)
                 .then(risposta => {
+                   
                     console.log(risposta)
                     toast({
                         duration: 10000,
@@ -32,6 +33,7 @@ angular.module('app')
                         className: "alert-success",
                         position: 'center'
                     })
+                    $state.go('ricette')
                 })
         }
     })

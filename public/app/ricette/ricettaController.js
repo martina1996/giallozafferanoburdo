@@ -1,6 +1,6 @@
 angular.module('app')
     // .controller('ricetteController', function ($scope, RicetteService, IngredientiService) {
-    .controller('ricettaController', function ($scope, ricetta, RicetteService, $state, ingredienti) {
+    .controller('ricettaController', function ($scope, ricetta, RicetteService, $state, ingredienti, $state, toast) {
 
         $scope.ricetta = ricetta;
         
@@ -16,6 +16,14 @@ angular.module('app')
                    RicetteService.putOne($scope.ricetta._id, $scope.ricetta)
                         .then(risposta => {
                             $state.go('ricette')
+                            toast({
+                                duration: 10000,
+                                message: "Ricetta salvata!",
+                                className: "alert-success",
+                                position: 'center'
+                            })
+
+
                         })
                  }
              
