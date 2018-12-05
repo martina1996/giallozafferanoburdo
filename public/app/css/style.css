@@ -42,3 +42,6 @@ body {
 .dropdown-item {
     cursor: pointer
 }
+h2 {
+    margin-top: 10px
+}
