@@ -1,8 +1,7 @@
 <div class="row">
     <div class="col-12 mx-auto text-center">
         <h1 class="title" ng-bind="ricetta.nome | maiuscolo"></h1>
-        <img ng-src={{ricetta.immagine}} alt="Responsive image" width="782px"
-            height="250px">
+        <img ng-src={{ricetta.immagine}} alt="Responsive image" width="830px" height="400px">
     </div>
 </div>
 <br>
@@ -81,9 +80,8 @@
             <label><strong>Immagine:</strong></label>
             <input class="form-control" type="text" ng-model="ricetta.immagine">
             
-            <h1 class="bottone"><button type="submit" class="btn btn-dark"> modifica</button></h1>
+            <h1 class="bottone"><button type="submit" class="btn btn-dark"> modifica</button>  <button ng-click="deleteOne(ricetta._id)" class="btn btn-dark"> Elimina</button></h1>
             
         </div> </div>
             
         </form>
-        <h1 class="bottone"><button ng-click="deleteOne(ricetta._id)" class="btn btn-dark"> Elimina</button></h1>
