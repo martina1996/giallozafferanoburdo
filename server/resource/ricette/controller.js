@@ -16,19 +16,20 @@ module.exports = (function () {
             query.where('votomax').lt(req.query.votomax).sort({ field: 1 })
         }
         if (req.query.portata) {
+            console.log(req.query.portata)
             query.where('portata').equals(req.query.portata).sort({ field: 1 })
         }
         if (req.query.regione) {
             query.where('regione').equals(req.query.regione).sort({ field: 1 })
         }
-        if (req.query.ingredienti) {
+        if (req.query.ingredienti ) {
             query.where('ingredienti').equals(req.query.ingredienti).sort({ field: 1 })
         }
-        if (req.query.portata) {
-            var portate = req.query.portata.split(",")
-            console.log(portate)
-            query.where('portata').in(portate).sort({ field: 1 })
-        }
+        // if (req.query.portata) {
+        //     var portate = req.query.portata.split(",")
+        //     console.log(portate)
+        //     query.where('portata').in(portate).sort({ field: 1 })
+        // }
 
 
         query

@@ -25,12 +25,12 @@ angular.module('app')
             })
         $stateProvider
             .state('ricette', {
-                url: '/ricette',
+                url: '/ricette?portata',
                 templateUrl: '/public/app/ricette/ricetteTemplate.html',
                 controller: 'ricetteController',
                 resolve: {
-                    ricette: async function (RicetteService) {
-                        var risposta = await RicetteService.getAll()
+                    ricette: async function (RicetteService , $stateParams) {
+                        var risposta = await RicetteService.getAll($stateParams.portata)
                         return risposta.data;
                     },
 
